@@ -1,6 +1,5 @@
 class User
-	attr_reader :name
-	attr_accessor :book_checked_out
+	attr_accessor :book_checked_out, :name
 
 	def initialize(name)
 		@name = name	
