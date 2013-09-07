@@ -1,6 +1,5 @@
 class Book
-	attr_reader :title, :author, :description
-	attr_accessor :reader, :due_date
+	attr_accessor :title, :author, :description, :reader, :due_date
 
 	def initialize(title, author, description)
 		@title = title
@@ -9,4 +8,5 @@ class Book
 		@reader = ''
 		@due_date = 0
 	end
+
 end
