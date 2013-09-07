@@ -24,6 +24,38 @@ class Library
 		end
 	end
 
+# Change  book status to "lost" if assigned lost status.
+	def is_lost
+		book.stats = 'Lost'
+	end
+
+	
+
+# Change book status to "overdue" if reader keeps book past due_date
+	def is_overdue
+		if (Time.now).to_i > book.due_date && book.status == "Checked Out"
+			book.status = "Overdue"
+			puts "#{book.title} is overdue!"
+		elsif book.status == "Avalable"
+			puts "#{book.title} is available."
+		else
+			puts "#{book.title} is checked out but not overdue."
+		end
+	end
+
+
+	def return_book(book, user)
+		user.book_checked_out.delete(book)
+		book.status = "Available"
+	end
+
+	def list_overdue
+		@books.each do |book|
+			if book.status == "Overdue"
+				puts "#{book.title}"
+			end
+		end
+	end
 end
 
 
