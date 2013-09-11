@@ -1,13 +1,11 @@
 class Book
-	attr_accessor :title, :author, :description, :reader, :due_date, :status
-
-	def initialize(title, author, description)
-		@title = title
+	attr_accessor :title, :author, :description, :renter, :due_date, :status
+		def initialize(title, author, description)
+    @title = title
 		@author = author 
 		@description = description
-		@reader = ''
-		@due_date = 0
+		@renter = nil
+		@due_date = nil
 		@status = 'Available'
 	end
-
 end
